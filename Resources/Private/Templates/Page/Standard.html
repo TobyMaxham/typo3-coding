@@ -1,0 +1,50 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     f:schemaLocation="https://fluidtypo3.org/schemas/fluid-master.xsd"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     flux:schemaLocation="https://fluidtypo3.org/schemas/flux-master.xsd"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd">
+    <f:layout name="Page" />
+
+
+    <f:section name="Configuration">
+        <flux:form id="fluidpage" options="{icon: 'Icons/Page/Standard.gif'}" />
+        <flux:grid>
+
+            <flux:grid.row>
+                <flux:grid.column colPos="0" colspan="3" name="Code_Section" label="Bereich zur Codeanzeige" />
+            </flux:grid.row>
+
+        </flux:grid>
+    </f:section>
+
+
+
+    <f:section name="Code_Section">
+
+
+        <!-- Bootstrap Source -->
+        <v:asset.style path="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" external="true" />
+
+        <!-- Prism CSS and Custom Styles -->
+        <v:asset.style path="EXT:tm_coding/Resources/Public/Theme/style.css" />
+        <v:asset.style path="EXT:tm_coding/Resources/Public/Theme/prism.css" />
+
+        <!-- Prism JavaScript Source -->
+        <v:asset.script path="EXT:tm_coding/Resources/Public/Theme/prism.js" />
+
+            <section id="randCollection">
+              <v:content.render column="0" />
+            </section>
+
+        <!-- jQuery Source -->
+        <v:asset.script path="http://startbootstrap.com/templates/clean-blog/js/jquery.min.js" external="true"/>
+
+        <!-- Bootstrap Source -->
+        <v:asset.script path="http://startbootstrap.com/templates/clean-blog/js/bootstrap.min.js" external="true" />
+
+    </f:section>
+
+
+</div>

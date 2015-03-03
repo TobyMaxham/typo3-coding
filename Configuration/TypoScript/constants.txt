@@ -1,0 +1,15 @@
+
+plugin.tx_tmcoding {
+	view {
+		# cat=plugin.tx_tmcoding/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:tm_coding/Resources/Private/Templates/
+		# cat=plugin.tx_tmcoding/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:tm_coding/Resources/Private/Partials/
+		# cat=plugin.tx_tmcoding/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:tm_coding/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_tmcoding//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

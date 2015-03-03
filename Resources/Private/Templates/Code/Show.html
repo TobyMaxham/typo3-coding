@@ -1,0 +1,86 @@
+
+<f:layout name="Default" />
+
+This Template is responsible for displaying a single view for a domain object
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        Show.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<f:render partial="Code/Properties" arguments="{code:code}" />
+<f:link.action action="list"><span style="text-decoration: underline">Back to list</span></f:link.action>
+
+
+    <h1>Here you can see all comments</h1>
+
+
+    <p>New Comment:</p>
+    <f:flashMessages renderMode="div" />
+    <f:form action="create" controller="CodeComment" name="newCodeComment" object="{newCodeComment:newCodeComment}">
+
+        <div class="row">
+            <div class="col-lg-5">
+                <f:form.textarea property="text" rows="4" class="form-control" />
+
+                <f:form.hidden property="code" value="{code.uid}"/>
+                <f:form.hidden name="code" value="{code.uid}"/>
+            </div>
+            <div class="col-lg-3">
+                <f:form.submit value="Submit Comment" class="btn btn-default" />
+            </div>
+        </div>
+    </f:form>
+
+
+    <div style="display: none" id="debug_section">
+        <f:debug title="My Title" maxDepth="5" inline="true">{codeComments}</f:debug>
+    </div>
+
+    <f:for each="{codeComments}" as="comment">
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="{comment.icon}" alt="Profil Icon">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Toby</h4>
+                {comment.text}
+            </div>
+        </div>
+    </f:for>
+
+    <br />
+
+
+
+    <p>New Comment:</p>
+    <f:flashMessages renderMode="div" />
+    <f:form action="create" controller="CodeComment" name="newCodeComment" object="{newCodeComment:newCodeComment}">
+
+        <div class="row">
+            <div class="col-lg-5">
+                <f:form.textarea property="text" rows="4" class="form-control" />
+
+                <f:form.hidden property="code" value="{code.uid}"/>
+                <f:form.hidden name="code" value="{code.uid}"/>
+            </div>
+            <div class="col-lg-3">
+                <f:form.submit value="Submit Comment" class="btn btn-default" />
+            </div>
+        </div>
+    </f:form>
+
+    <br /><br />
+    <f:link.action action="list"><span style="text-decoration: underline">Back to list</span></f:link.action><br />
+
+    <br /><br />
+
+
+</f:section>

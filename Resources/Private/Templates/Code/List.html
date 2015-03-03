@@ -1,0 +1,22 @@
+<div xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     v:schemaLocation="https://fluidtypo3.org/schemas/vhs-master.xsd">
+
+
+    <f:layout name="Default" />
+
+    <f:section name="main">
+
+        <f:flashMessages renderMode="div" />
+
+                <f:for each="{codes}" as="code">
+
+                    <h1><a href="#randCollection">{code.name}</a></h1>
+                    <p>{code.description}</p>
+                    <pre class="language-php"><code class="  language-php">{code.code}</code></pre>
+
+                    <p><f:link.action action="show" arguments="{code : code}">[10] Comments</f:link.action>.
+                        Do you also want to write a comment? Klick <f:link.action action="show" arguments="{code : code}">here</f:link.action>!</p>
+
+                </f:for>
+
+    </f:section>
