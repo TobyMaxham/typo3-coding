@@ -32,17 +32,17 @@
         <v:asset.style path="EXT:tm_coding/Resources/Public/Theme/prism.css" />
 
         <!-- Prism JavaScript Source -->
-        <v:asset.script path="EXT:tm_coding/Resources/Public/Theme/prism.js" />
+        <v:asset.script path="EXT:tm_coding/Resources/Public/Theme/prism.js" name="prism" />
 
             <section id="randCollection">
               <v:content.render column="0" />
             </section>
 
         <!-- jQuery Source -->
-        <v:asset.script path="http://startbootstrap.com/templates/clean-blog/js/jquery.min.js" external="true"/>
+        <v:asset.script path="http://startbootstrap.com/templates/clean-blog/js/jquery.min.js" name="jquery" dependencies="{prism}" external="true"/>
 
         <!-- Bootstrap Source -->
-        <v:asset.script path="http://startbootstrap.com/templates/clean-blog/js/bootstrap.min.js" external="true" />
+        <v:asset.script path="http://startbootstrap.com/templates/clean-blog/js/bootstrap.min.js" dependencies="{jquery}" external="true" />
 
     </f:section>
 
